@@ -1,0 +1,14 @@
+module.exports = ({
+  name: 'setprefix',
+  code: `
+  $onlyIf[$message[1]!=;digite um prefixo para ser alterado!!!]
+  $author[Feito;https://cdn.discordapp.com/attachments/795965782944120862/798540261353193472/6286_tada_animated.gif]
+  $description[**ok, prefixo definido para:** \n\`$message\n\`! use: **$messagehelp** para obter ajuda!]
+  $footer[prefixo alterado por: $userTag]
+$color[GREEN]
+$argsCheck[>1;digite um prefixo para ser alterado!!!]
+$onlyPerms[admin;:x:**|** *Você não é um* \n\`Administrador\n\`!]
+$setServerVar[prefix;$message]
+  `
+
+})
