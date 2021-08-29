@@ -1,0 +1,24 @@
+bot.command({
+  name: 'h',
+  code: `$reactionCollector[$splitText[1];everyone;1m;🔄,1️⃣,2️⃣;awaitReaction1,awaitReaction2,awaitReaction3;yes]
+$textSplit[$sendMessage[{title: Help} {description::
+1️⃣ help mod
+2️⃣ help eco} {color:RANDOM};yes]; ]`
+})
+
+bot.awaitedCommand({
+  name: "awaitReaction1",
+  code: `$editMessage[$message[1];{title: Help}{description:1️⃣ help mod
+  2️⃣ help eco}{color:RANDOM}
+  ]`
+})
+
+bot.awaitedCommand({
+  name: 'awaitReaction2',
+  code: `$editMessage[$message[1];{title: help pagina 2}{description: bem-vindo a página 2}{color:RANDOM} {footer: 🔄 - retornar a pagina inicial}]`
+})
+
+bot.awaitedCommand({
+  name: 'awaitReaction3',
+  code: `$editMessage[$message[1];{footer:🔄 - retornar a pagina inicial}{title: Pagina 2}{description: Bem-Vindo a pagina 2!}{color:RANDOM}]`
+})
