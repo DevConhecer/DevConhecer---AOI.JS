@@ -1,0 +1,17 @@
+bot.command({
+ name: 'teste',
+ code: `$createSlashCommand[$guildID;teste;testar o comando] criado`
+ //o bot criar o comando slash atraves desse comando!
+})
+
+bot.interactionCommand({
+  name: 'teste',
+  code: `$interactionReply[comando testado com sucesso!]`
+})
+bot.onInteractionCreate()
+
+bot.command({
+  name: 'delete',
+  code: `$deleteSlashCommand[$guildID;$message] deletado`//deleta o slash
+
+}) 
